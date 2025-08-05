@@ -51,6 +51,7 @@ next-env.d.ts
 
 # Firebase
 /Backend
+firebase.js
 
 # Koxone
 /Koxone
