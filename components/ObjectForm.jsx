@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import SensitiveImage from './SensitiveImage';
+import { useState } from "react";
+import SensitiveImage from "./SensitiveImage";
 
 /**
  * Form for uploading a new forensic object. It contains required fields and
@@ -10,13 +10,13 @@ import SensitiveImage from './SensitiveImage';
  */
 export default function ObjectForm() {
   const initialState = {
-    type: '',
-    color: '',
-    state: '',
-    date: '',
-    location: '',
-    collective: '',
-    description: '',
+    type: "",
+    color: "",
+    state: "",
+    date: "",
+    location: "",
+    collective: "",
+    description: "",
     isPrivate: false,
     imageFile: null,
   };
@@ -28,7 +28,7 @@ export default function ObjectForm() {
     const { name, value, type, checked } = e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -43,14 +43,14 @@ export default function ObjectForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simple client‑side validation
-    const requiredFields = ['type', 'color', 'state', 'date', 'location', 'description'];
+    const requiredFields = ["type", "color", "state", "date", "location", "description"];
     const missing = requiredFields.filter((f) => !form[f]);
     if (missing.length) {
-      alert('Por favor completa todos los campos obligatorios.');
+      alert("Por favor completa todos los campos obligatorios.");
       return;
     }
     // Simulate submission
-    console.log('Form submission', form);
+    console.log("Form submission", form);
     setSubmitted(true);
     // Reset form after submission
     setForm(initialState);
@@ -60,10 +60,12 @@ export default function ObjectForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-muted border border-primary/10 p-6 rounded-lg max-w-xl mx-auto text-sm">
-      <h2 className="text-lg font-serif mb-4">Subir nuevo hallazgo</h2>
+      <h2 className="text-lg  mb-4">Subir nuevo hallazgo</h2>
       <div className="flex flex-col space-y-4">
         <div>
-          <label htmlFor="image" className="block mb-1 font-semibold">Imagen (contenido sensible)</label>
+          <label htmlFor="image" className="block mb-1 font-semibold">
+            Imagen (contenido sensible)
+          </label>
           <input
             type="file"
             id="image"
@@ -80,7 +82,9 @@ export default function ObjectForm() {
           )}
         </div>
         <div>
-          <label htmlFor="type" className="block mb-1 font-semibold">Tipo de objeto*</label>
+          <label htmlFor="type" className="block mb-1 font-semibold">
+            Tipo de objeto*
+          </label>
           <input
             type="text"
             id="type"
@@ -92,7 +96,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="color" className="block mb-1 font-semibold">Color*</label>
+          <label htmlFor="color" className="block mb-1 font-semibold">
+            Color*
+          </label>
           <input
             type="text"
             id="color"
@@ -104,7 +110,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="state" className="block mb-1 font-semibold">Estado de conservación*</label>
+          <label htmlFor="state" className="block mb-1 font-semibold">
+            Estado de conservación*
+          </label>
           <input
             type="text"
             id="state"
@@ -116,7 +124,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="date" className="block mb-1 font-semibold">Fecha de hallazgo*</label>
+          <label htmlFor="date" className="block mb-1 font-semibold">
+            Fecha de hallazgo*
+          </label>
           <input
             type="date"
             id="date"
@@ -128,7 +138,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="location" className="block mb-1 font-semibold">Ubicación*</label>
+          <label htmlFor="location" className="block mb-1 font-semibold">
+            Ubicación*
+          </label>
           <input
             type="text"
             id="location"
@@ -140,7 +152,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="collective" className="block mb-1 font-semibold">Colectivo responsable</label>
+          <label htmlFor="collective" className="block mb-1 font-semibold">
+            Colectivo responsable
+          </label>
           <input
             type="text"
             id="collective"
@@ -151,7 +165,9 @@ export default function ObjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="description" className="block mb-1 font-semibold">Descripción*</label>
+          <label htmlFor="description" className="block mb-1 font-semibold">
+            Descripción*
+          </label>
           <textarea
             id="description"
             name="description"
@@ -171,9 +187,16 @@ export default function ObjectForm() {
             onChange={handleChange}
             className="mr-2"
           />
-          <label htmlFor="isPrivate" className="text-sm">Marcar como caso privado (solo visible a usuarios con permiso)</label>
+          <label htmlFor="isPrivate" className="text-sm">
+            Marcar como caso privado (solo visible a usuarios con permiso)
+          </label>
         </div>
-        <button type="submit" className="mt-4 px-4 py-2 bg-primary text-secondary rounded hover:bg-accent transition-colors">Enviar hallazgo</button>
+        <button
+          type="submit"
+          className="mt-4 px-4 py-2 bg-primary text-secondary rounded hover:bg-accent transition-colors"
+        >
+          Enviar hallazgo
+        </button>
         {submitted && <p className="text-green-600 mt-2">El hallazgo se ha enviado (demostración).</p>}
       </div>
     </form>

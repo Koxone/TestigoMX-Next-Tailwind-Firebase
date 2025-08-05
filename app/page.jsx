@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden">
         <Image src="/abstract-bg.png" alt="Fondo abstracto azul" fill sizes="100%" className="object-cover" priority />
         <div className="absolute inset-0 bg-primary/70 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif text-secondary mb-2">Bienvenido a Testigo.mx</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-secondary mb-2">Bienvenido a Testigo.mx</h1>
           <p className="text-sm sm:text-base md:text-lg text-secondary/90 max-w-2xl mb-4">
             Plataforma humanitaria para documentar, clasificar y visualizar hallazgos forenses relacionados con personas
             desaparecidas en México.
@@ -31,7 +31,7 @@ export default function HomePage() {
       <Stats total={total} zones={zones} collectives={collectives} />
       {/* Intro text */}
       <section className="mt-8 max-w-3xl mx-auto text-base leading-relaxed">
-        <h2 className="text-xl font-serif mb-2">Nuestra misión</h2>
+        <h2 className="text-xl mb-2">Nuestra misión</h2>
         <p className="mb-4">
           Testigo.mx nace para servir como un repositorio seguro y consultable de objetos personales y restos
           recuperados en búsquedas de campo y fosas clandestinas. Su objetivo es apoyar a familiares y colectivos de

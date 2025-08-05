@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useMemo } from 'react';
-import objects from '../../data/objects';
-import FilterBar from '../../components/FilterBar';
-import ObjectCard from '../../components/ObjectCard';
+import { useState, useMemo } from "react";
+import objects from "../../data/objects";
+import FilterBar from "../../components/FilterBar";
+import ObjectCard from "../../components/ObjectCard";
 
 export default function GalleryPage() {
-  const [filters, setFilters] = useState({ type: '', color: '', location: '', state: '' });
+  const [filters, setFilters] = useState({ type: "", color: "", location: "", state: "" });
   // Filter objects based on current filters
   const filtered = useMemo(() => {
     return objects.filter((obj) => {
@@ -21,7 +21,7 @@ export default function GalleryPage() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h1 className="text-2xl font-serif mb-4">Galería de objetos hallados</h1>
+      <h1 className="text-2xl  mb-4">Galería de objetos hallados</h1>
       <FilterBar objects={objects} filters={filters} onFilterChange={setFilters} />
       <div>
         {filtered.length ? (

@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <nav className="bg-primary text-secondary shadow-none">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <div className="text-xl border font-serif font-semibold">
+        <div className="text-xl border  font-semibold">
           {/* <Image
           src=} /> */}
         </div>
